@@ -1,11 +1,13 @@
 from django.db import models
 
+
 class Tag(models.Model):
     name = models.CharField(max_length=100, unique=True)
 
     def __str__(self) -> str:
         return self.name
-     
+
+
 class Project(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
@@ -14,11 +16,21 @@ class Project(models.Model):
 
     def __str__(self) -> str:
         return self.title
-    
+
+
 class ProjectImage(models.Model):
-    project = models.ForeignKey(Project, related_name = "images", on_delete=models.CASCADE)
+    project = models.ForeignKey(
+        Project, related_name="images", on_delete=models.CASCADE)
     image = models.ImageField(upload_to="project_images/")
 
     def __str__(self) -> str:
         return self.project.title + " Image"
 
+
+class ProjectVideo(models.Model):
+    project = models.ForeignKey(
+        Project, related_name="video", on_delete=models.CASCADE)
+    video = models.FileField(upload_to="project_videos/", unique=True)
+
+    def __str__(self) -> str:
+        return self.project.title + " Video"

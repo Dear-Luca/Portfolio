@@ -1,132 +1,119 @@
-/* Project Card */
-.project-card {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    background-color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    overflow: hidden;
+/* File: project.css */
+
+
+.project-container {
     max-width: 1200px;
-    /* Adjust based on your preference */
-    margin: auto;
+    margin: 0 auto;
     padding: 20px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .project-info {
-    flex: 1;
-    padding-right: 20px;
-    /* Adds some space between the text and the carousel */
+    text-align: center;
+    padding: 20px 0;
 }
 
-/* Adjustments to previous styles for consistency */
-h1,
-p {
+.project-info h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.project-info p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.project-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
     margin-bottom: 20px;
+    display: inline-block;
 }
 
-/* Carousel */
+.project-link:hover {
+    color: #1c66b0;
+}
+
+.back-home {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 25px;
+    text-decoration: none;
+}
+
+.back-home:hover {
+    background-color: #1c66b0;
+}
+
 .carousel {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
     position: relative;
-    /* Added to position controls */
-    max-width: 50%;
-    /* Adjust the width of the carousel relative to the card */
-    margin-left: 20px;
-    /* Optional: Adds some space between the info and carousel */
+    max-width: 100%;
+    margin: 30px auto;
+    overflow: hidden;
+    border-radius: 15px;
 }
 
 .carousel-images {
     display: flex;
-    flex: 1;
-    /* Allows the carousel to fill the space */
-    overflow: hidden;
-    position: relative;
-    /* Ensure the images container doesn't overlap controls */
+    transition: transform 0.5s ease-in-out;
 }
 
-/* Carousel Controls */
+.carousel-item {
+    min-width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.carousel-image {
+    width: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
 .carousel-control {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     color: white;
-    font-size: 24px;
+    font-size: 2rem;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 10px;
     cursor: pointer;
-    user-select: none;
-    /* Prevent text selection */
-    z-index: 10;
-    /* Ensure controls are above the images */
+    z-index: 1;
+    border-radius: 50%;
 }
 
 .carousel-control.prev {
-    left: 0;
-    border-radius: 3px 0 0 3px;
-    /* Adjusted for consistency */
+    left: 10px;
 }
 
 .carousel-control.next {
-    right: 0;
-    border-radius: 0 3px 3px 0;
-    /* Adjusted for consistency */
+    right: 10px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .project-card {
-        flex-direction: column;
-    }
-
-    .project-info,
-    .carousel {
-        max-width: 100%;
-        padding: 0;
-    }
-
-    .carousel {
-        order: -1;
-        /* Puts the carousel above the info on small screens */
-        margin-left: 0;
-        /* Resets the margin for smaller screens */
-    }
+.carousel-control:hover {
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
-.carousel-item {
-    display: flex;
-    justify-content: center;
-    /* Center the image horizontally */
-    align-items: center;
-    /* Center the image vertically */
-    background-color: black;
-    /* Fill the background with black */
-    width: 100%;
-    /* Full width of the carousel */
-    height: 400px;
-    /* Fixed height, adjust as needed */
+.video-container {
+    text-align: center;
+    margin-top: 50px;
 }
 
-.carousel-item img {
-    max-height: 100%;
-    /* Limit the image height to fit within the container */
-    max-width: 100%;
-    /* Limit the image width to fit within the container */
-    object-fit: contain;
-    /* Maintain aspect ratio and fit the image within the bounds */
+.video-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
 
 .video-project {
-    position: fixed;
-    justify-content: center;
-    bottom: 20px;
-    left: 50%; /* Move the element to the center of the viewport horizontally */
-    transform: translate(-50%, 0); /* Shift it to be centered horizontally */
-    /* Centra il video orizzontalmente */
-    width: 50%;
+    width: 100%;
+    max-width: 1000px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 
-    height: 30%;
-    /* Mantiene il rapporto d'aspetto */
 }

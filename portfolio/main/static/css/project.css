@@ -121,7 +121,7 @@ p {
 .video-project {
     position: fixed;
     justify-content: center;
-    bottom: 300px;
+    bottom: 20px;
     left: 50%; /* Move the element to the center of the viewport horizontally */
     transform: translate(-50%, 0); /* Shift it to be centered horizontally */
     /* Centra il video orizzontalmente */

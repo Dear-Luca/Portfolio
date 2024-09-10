@@ -2,32 +2,32 @@
 {% load static %}
 
 {% block title %}
-  Home Page
-{% endblock %}
+Luca's Portfolio
+{% endblock title %}
+
 {% block extrahead %}
-  <link rel="stylesheet" href="{% static 'css/home.css' %}" />
-{% endblock %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+{% endblock extrahead %}
 
 {% block content %}
-  <div class="filters">
-    <input type="text" id="name-search" placeholder="Search by name..." />
-    <div class="tags-list">
-      {% for tag in tags %}
-        <button class="tag" data-tag="{{ tag.name|lower }}">{{ tag.name }}</button>
-      {% endfor %}
+<div class="hero">
+    <img src="{% static 'images/hero-bg-1.jpg' %}" alt="Background Image" class="hero-image">
+    <div class="hero-content">
+        <h1 class="hero-title">Hi, I'm Luca!</h1>
+        <p class="hero-description">A passionate Computer Science student from Bologna</p>
+        <a class="hero-button" href="/projects">View My Work</a>
     </div>
-  </div>
-  <div class="projects-list">
-    {% for project in projects %}
-      <div class="project" data-name="{{ project.title|lower }}" data-tags="{{ project.tags.all|join:', '|lower }}">
-        <h2><a href="{% url 'project' project.id %}">{{project.title}}</a></h2>
-        <p>{{project.description}}</p>
-        <p>Tags: {{project.tags.all|join:', '}}</p>
-      </div>
-    {% endfor %}
-  </div>
-{% endblock %}
+</div>
 
-{% block extra_js %}
-  <script src="{% static 'js/home.js' %}"></script>
-{% endblock %}
+<div class="about-section">
+    <h2>About Me</h2>
+    <p>I'm currently pursuing a degree in Computer Science and Engineering at the University of Bologna. I love coding,
+        building software solutions, and always strive to learn new technologies.</p>
+</div>
+
+<div class="contact-section">
+    <h2>Contact Me</h2>
+    <a class="contact-button" href="mailto:luca1010.marchi@gmail.com">Get in Touch</a>
+</div>
+{% endblock content %}

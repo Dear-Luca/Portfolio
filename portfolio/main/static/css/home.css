@@ -46,6 +46,12 @@
     font-weight: 600;
 }
 
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
 .hero-button:hover {
     background-color: #1c66b0;
 }

@@ -21,9 +21,10 @@ document.addEventListener("DOMContentLoaded", function () {
     tags.forEach((tag) => {
         tag.addEventListener("click", function () {
             const selectedTag = this.getAttribute("data-tag")
-
+    
             projects.forEach((project) => {
-                const projectTags = project.getAttribute("data-tags")
+                const projectTags = project.getAttribute("data-tags").split(',').map(tag => tag.trim())
+    
                 if (projectTags.includes(selectedTag)) {
                     project.style.display = ""
                 } else {
